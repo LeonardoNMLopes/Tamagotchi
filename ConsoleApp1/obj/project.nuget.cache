@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "f5e2bBmuVaXN8FSpTwG1ZktBdwV1L6HaJYFRWvELmvUeIbmASOORsqITznJFcGnsGtSOWtrTltsH9ha4aTtMyA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\leonu\\source\\repos\\TamagotchiAPI\\TamagotchiAPI\\ConsoleApp1\\ConsoleApp1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\leonu\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\leonu\\.nuget\\packages\\restsharp\\106.15.0\\restsharp.106.15.0.nupkg.sha512"
+  ],
+  "logs": []
+}
