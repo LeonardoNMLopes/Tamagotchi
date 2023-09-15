@@ -44,9 +44,25 @@ public class Program
         request = new RestRequest(Method.GET);
         response = client.Execute(request);
 
-        // Mostrar as características ao jogador
-        Console.WriteLine(response.Content);
+        var pokemonDetalhes = JsonConvert.DeserializeObject<PokemonDetailsResults>(response.Content);
 
+        var pokemonEscolhido = pokemonEspeciesResposta.Results[escolha - 1];
 
+        //Mostrar as características ao jogador
+        Console.WriteLine("\n");
+        Console.WriteLine("Você escolheu " + pokemonEscolhido.Name + "!");
+        Console.WriteLine("Detahles: ");
+        Console.WriteLine("- Nome: " + pokemonEscolhido.Name);
+        Console.WriteLine("- Peso: " + pokemonDetalhes.weight);
+        Console.WriteLine("- Altura: " + pokemonDetalhes.Height);
+
+        Console.WriteLine("\n Habilidades do Mascote: ");
+
+        foreach(var abiliyDetail in pokemonDetalhes.Abilities)
+        {
+            Console.WriteLine("Nome da habilidade: " + abiliyDetail.Ability.Name);
+        }
+
+        Console.WriteLine("\n");
     }
 }
