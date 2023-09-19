@@ -9,6 +9,7 @@ namespace ConsoleApp1
     internal class Menu
     {
        public void MostrarMensagemDeBoasVindas()
+       //serve para dar uma mensagem de boas-vindas ao jogador
         {
             Console.WriteLine("\n-------------");
             Console.WriteLine("Bem-vindo ao jogo de adoção de mascotes! ");
@@ -18,16 +19,18 @@ namespace ConsoleApp1
         }
 
         public void MostrarMenuPrincipal()
+        //serve para mostrar o menu do jogo ao jogador 
         {
             Console.WriteLine("\n-------------");
             Console.WriteLine("Menu principal: ");
             Console.WriteLine("1. Adoção de mascotes");
-            Console.WriteLine("2. Ver mascptes adotados");
+            Console.WriteLine("2. Ver mascotes adotados");
             Console.WriteLine("3. Sair do jogo");
             Console.WriteLine("Escolha uma opção");
         }
 
         public int ObterEscolhaDoJogador()
+        //Serve para obter a escolha do jogador, que só pode ser um numero entre 1 e 4 para passar do loop
         {
             int escolha;
             while (!int.TryParse(Console.ReadLine(), out escolha) || escolha < 1 || escolha > 4)
@@ -38,6 +41,7 @@ namespace ConsoleApp1
         }
 
         public void MostrarMenuDeAdocao()
+        //Serve para obter o menu de adoção
         {
             Console.WriteLine("\n-------------");
             Console.WriteLine("Menu de Adoção de Mascotes: ");
@@ -49,6 +53,7 @@ namespace ConsoleApp1
         }
 
         public void MostrarEspeciesDisponiveis(List<PokemonResult> especies)
+        //Serve para obter uma lista de espécies de pokémons disponíveis para a adoção
         {
             Console.WriteLine("\n------------");
             Console.WriteLine("Especies disponíveis para adoção: ");
@@ -59,21 +64,24 @@ namespace ConsoleApp1
         }
 
         public void MostrarDetalhesDaEspecie(PokemonDetailsResults detalhes)
+        //Serve para pegar as informaçãoes do Pokémon escolhido
         {
             Console.WriteLine("\n------------");
             Console.WriteLine("Detalhes da Especie: ");
             Console.WriteLine("Nome: " + detalhes.Name);
             Console.WriteLine("Altura: " + detalhes.Height);
-            Console.WriteLine("Peso: " + detalhes.weight);
+            Console.WriteLine("Peso: " + detalhes.Weight);
             Console.WriteLine("Habilidades: ");
 
             foreach (var habilidades in detalhes.Abilities)
+        //Serve para vasculhar as habilidades do Pokémon escolhido usado p ".Abilities" da classe "PokemonDetailResults"
             {
                 Console.WriteLine("- " + habilidades.Ability.Name);
             }
         }
 
         public bool ConfirmarAdocao()
+        //Serve para obter a resposta do jogador sobre adotar ou não
         {
             Console.WriteLine("\n ──────────────");
             Console.Write("Você gostaria de adotar este mascote? (s/n): ");
@@ -82,6 +90,7 @@ namespace ConsoleApp1
         }
 
         public void MostrarMascotesAdotados(List<PokemonDetailsResults> mascotesAdotados)
+        //Serve para obter a lista de Pokémons adotados pelo jogador, caso não haja uma mensagem sera mostrada
         {
             Console.WriteLine("\n ──────────────");
             Console.WriteLine("Mascotes Adotados:");
@@ -97,7 +106,8 @@ namespace ConsoleApp1
                 }
             }
         }
-        public int ObterEspecieEscolhida(List<PokemonResult> especies)
+        public int ObterEspecieEscolhida(List<PokemonResult> especies)  
+        //Serve para obter o Pokémon escolhido pelo jogador
         {
             Console.WriteLine("\n ──────────────");
             int escolha;
@@ -111,7 +121,7 @@ namespace ConsoleApp1
                 Console.WriteLine("Escolha inválida.");
             }
             return escolha - 1;
-            // Ajuste para índice baseado em 0
+            // Ajuste para índice baseado em 0, pois a contagem começa no zero, e na API no 1
         }
     }
 }

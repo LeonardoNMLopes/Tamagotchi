@@ -9,6 +9,8 @@ namespace ConsoleApp1
     internal class PokemonResult
     {
         public string Name { get; set; }
+        //para pegar o nome do Pokémon na API
         public string Url { get; set; }
+        //para pegar o url associada ao Pokémon na API
     }
 }
