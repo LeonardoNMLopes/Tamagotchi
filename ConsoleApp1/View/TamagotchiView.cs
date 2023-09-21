@@ -20,23 +20,36 @@ namespace ConsoleApp1.View
         }
 
         public void MostrarMenuPrincipal()
-        //serve para mostrar o menu do jogo ao jogador 
+        //Serve para mostrar o menu principal
         {
-            Console.WriteLine("\n-------------");
-            Console.WriteLine("Menu principal: ");
-            Console.WriteLine("1. Adoção de mascotes");
-            Console.WriteLine("2. Ver mascotes adotados");
-            Console.WriteLine("3. Sair do jogo");
-            Console.WriteLine("Escolha uma opção");
+            Console.WriteLine("\n ──────────────");
+            Console.WriteLine("Menu Principal:");
+            Console.WriteLine("1. Adotar um Mascote");
+            Console.WriteLine("2. Interagir com seu Mascote");
+            Console.WriteLine("3. Ver Mascotes Adotados");
+            Console.WriteLine("4. Sair do Jogo");
+            Console.Write("Escolha uma opção: ");
         }
 
-        public int ObterEscolhaDoJogador()
-        //Serve para obter a escolha do jogador, que só pode ser um numero entre 1 e 4 para passar do loop
+        public void MostrarMenuDeInteracao()
+        //Serve para mostrar o menu de interação com o tamagotchi
+        {
+            Console.WriteLine("\n--------------");
+            Console.WriteLine("Menu de Interação: ");
+            Console.WriteLine("1. Saber como o mascote está");
+            Console.WriteLine("2. Alimentar o mascote");
+            Console.WriteLine("3. Brincar com o mascote");
+            Console.WriteLine("4. Voltar");
+            Console.WriteLine("Escolha uma opção: ");
+        }
+
+        public int ObterEscolhaDoJogador(int maxOpcao)
+        //Serve para obter a escolha do jogador, que só pode ser um numero entre 1 e o maximo de opções
         {
             int escolha;
-            while (!int.TryParse(Console.ReadLine(), out escolha) || escolha < 1 || escolha > 4)
+            while (!int.TryParse(Console.ReadLine(), out escolha) || escolha < 1 || escolha > maxOpcao)
             {
-                Console.WriteLine("Escolha inválida. Por favor, escolha uma opção entre 1 e 4: ");
+                Console.WriteLine("Escolha inválida. Por favor, escolha uma opção entre 1 e " + maxOpcao+ ": ");
             }
             return escolha;
         }
@@ -90,7 +103,7 @@ namespace ConsoleApp1.View
             return resposta.ToLower() == "s";
         }
 
-        public void MostrarMascotesAdotados(List<PokemonDetailsResults> mascotesAdotados)
+        public void MostrarMascotesAdotados(List<TamagotchiDto> mascotesAdotados)
         //Serve para obter a lista de Pokémons adotados pelo jogador, caso não haja uma mensagem sera mostrada
         {
             Console.WriteLine("\n ──────────────");
@@ -103,7 +116,7 @@ namespace ConsoleApp1.View
             {
                 for (int i = 0; i < mascotesAdotados.Count; i++)
                 {
-                    Console.WriteLine((i + 1) + ". " + mascotesAdotados[i].Name);
+                    Console.WriteLine((i + 1) + ". " + mascotesAdotados[i].Nome);
                 }
             }
         }
