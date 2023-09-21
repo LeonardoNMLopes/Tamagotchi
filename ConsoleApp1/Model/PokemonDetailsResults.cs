@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace ConsoleApp1.Model
 {
     internal class PokemonDetailsResults
     {
@@ -36,5 +36,5 @@ namespace ConsoleApp1
         //Serve para pegar o url associado da habilidade na API
 
     }
-}   
+}
 

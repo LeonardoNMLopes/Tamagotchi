@@ -1,15 +1,16 @@
-﻿using System;
+﻿using ConsoleApp1.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace ConsoleApp1.View
 {
-    internal class Menu
+    internal class TamagotchiView
     {
-       public void MostrarMensagemDeBoasVindas()
-       //serve para dar uma mensagem de boas-vindas ao jogador
+        public void MostrarMensagemDeBoasVindas()
+        //serve para dar uma mensagem de boas-vindas ao jogador
         {
             Console.WriteLine("\n-------------");
             Console.WriteLine("Bem-vindo ao jogo de adoção de mascotes! ");
@@ -74,7 +75,7 @@ namespace ConsoleApp1
             Console.WriteLine("Habilidades: ");
 
             foreach (var habilidades in detalhes.Abilities)
-        //Serve para vasculhar as habilidades do Pokémon escolhido usado p ".Abilities" da classe "PokemonDetailResults"
+            //Serve para vasculhar as habilidades do Pokémon escolhido usado detalhes ".Abilities" da classe "PokemonDetailResults"
             {
                 Console.WriteLine("- " + habilidades.Ability.Name);
             }
@@ -106,7 +107,7 @@ namespace ConsoleApp1
                 }
             }
         }
-        public int ObterEspecieEscolhida(List<PokemonResult> especies)  
+        public int ObterEspecieEscolhida(List<PokemonResult> especies)
         //Serve para obter o Pokémon escolhido pelo jogador
         {
             Console.WriteLine("\n ──────────────");
@@ -123,5 +124,6 @@ namespace ConsoleApp1
             return escolha - 1;
             // Ajuste para índice baseado em 0, pois a contagem começa no zero, e na API no 1
         }
+
     }
 }

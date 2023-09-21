@@ -5,8 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleApp1.Model;
 
-namespace ConsoleApp1
+namespace ConsoleApp1.Service
 {
     internal class PokemonApiService
     {
@@ -35,7 +36,7 @@ namespace ConsoleApp1
             var client = new RestClient($"https://pokeapi.co/api/v2/pokemon/{especie.Name}");
             var request = new RestRequest(Method.GET);
             var response = client.Execute(request);
-                
+
             return JsonConvert.DeserializeObject<PokemonDetailsResults>(response.Content);
 
         }
