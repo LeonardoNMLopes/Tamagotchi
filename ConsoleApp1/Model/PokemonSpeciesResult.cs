@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Model
 {
-    internal class PokemonSpeciesResult
+    public class PokemonSpeciesResult
     {
         public int Count { get; set; }
         //Serve para pegar o numero total de Pokémons

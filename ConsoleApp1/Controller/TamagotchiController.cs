@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,8 +17,18 @@ namespace ConsoleApp1.Controller
         private List<PokemonResult> especiesDisponiveis { get; set; }
 
         private List<TamagotchiDto> mascotesAdotados { get; set; }
+
+        IMapper mapper { get; set; }
+
         public TamagotchiController()
         {
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile<AutoMapperProfile>();
+            });
+
+            mapper = config.CreateMapper();
+
             tamagotchiView = new TamagotchiView();
             pokemonApiService = new PokemonApiService();
             especiesDisponiveis = pokemonApiService.ObterEspeciesDisponiveis();
@@ -58,8 +69,7 @@ namespace ConsoleApp1.Controller
                                     tamagotchiView.MostrarDetalhesDaEspecie(detalhes);
                                     if (tamagotchiView.ConfirmarAdocao())
                                     {
-                                        var tamagotchi = new TamagotchiDto();
-                                        tamagotchi.AtualizarPropriedades(detalhes);
+                                        TamagotchiDto tamagotchi = mapper.Map<TamagotchiDto>(detalhes);
                                         mascotesAdotados.Add(tamagotchi);
 
                                         Console.WriteLine("Parabéns! Você adotou um " + detalhes.Name + "!");
@@ -98,10 +108,10 @@ namespace ConsoleApp1.Controller
                         TamagotchiDto mascoteEscolhido = mascotesAdotados[indiceMascote];
 
                         int opcaoInteracao = 0;
-                        while (opcaoInteracao != 4)
+                        while (opcaoInteracao != 6)
                         {
                             tamagotchiView.MostrarMenuDeInteracao();
-                            opcaoInteracao = tamagotchiView.ObterEscolhaDoJogador(4);
+                            opcaoInteracao = tamagotchiView.ObterEscolhaDoJogador(6);
 
                             switch (opcaoInteracao)
                             {
@@ -113,6 +123,12 @@ namespace ConsoleApp1.Controller
                                     break;
                                 case 3:
                                     mascoteEscolhido.Brincar();
+                                    break;
+                                case 4:
+                                    mascoteEscolhido.Descansar();
+                                    break;
+                                case 5:
+                                    mascoteEscolhido.DarCarinho();
                                     break;
                             }
                         }

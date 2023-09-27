@@ -16,3 +16,4 @@ C:\Users\leonu\source\repos\TamagotchiAPI\TamagotchiAPI\ConsoleApp1\obj\Debug\ne
 C:\Users\leonu\source\repos\TamagotchiAPI\TamagotchiAPI\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.genruntimeconfig.cache
 C:\Users\leonu\source\repos\TamagotchiAPI\TamagotchiAPI\ConsoleApp1\obj\Debug\net7.0\ref\ConsoleApp1.dll
 C:\Users\leonu\source\repos\TamagotchiAPI\TamagotchiAPI\ConsoleApp1\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\leonu\source\repos\TamagotchiAPI\TamagotchiAPI\ConsoleApp1\bin\Debug\net7.0\AutoMapper.dll

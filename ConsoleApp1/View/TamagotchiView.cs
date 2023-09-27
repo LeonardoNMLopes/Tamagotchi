@@ -20,7 +20,7 @@ namespace ConsoleApp1.View
         }
 
         public void MostrarMenuPrincipal()
-        //Serve para mostrar o menu principal
+        //Serve para mostrar o menu principal   
         {
             Console.WriteLine("\n ──────────────");
             Console.WriteLine("Menu Principal:");
@@ -39,7 +39,9 @@ namespace ConsoleApp1.View
             Console.WriteLine("1. Saber como o mascote está");
             Console.WriteLine("2. Alimentar o mascote");
             Console.WriteLine("3. Brincar com o mascote");
-            Console.WriteLine("4. Voltar");
+            Console.WriteLine("4. Dormir zzzz");
+            Console.WriteLine("5. Dar carinho :3 ");
+            Console.WriteLine("6. Voltar");
             Console.WriteLine("Escolha uma opção: ");
         }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Model
 {
-    internal class PokemonDetailsResults
+    public class PokemonDetailsResults
     {
         public List<AbilityDetail> Abilities { get; set; }
         //Serve para pegar uma lista de habilidades em detalhes de um Pokémon

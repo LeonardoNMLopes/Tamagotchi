@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Model
 {
-    internal class TamagotchiDto
+    public class TamagotchiDto
     {
         public int Alimentacao { get; private set; }
         public int Humor { get; private set; }
@@ -27,13 +27,15 @@ namespace ConsoleApp1.Model
             Saude = rand.Next(11);
         }
 
-        public void AtualizarPropriedades(PokemonDetailsResults pokemonDetails)
-        {
-            Nome = pokemonDetails.Name;
-            Altura = pokemonDetails.Height;
-            Peso = pokemonDetails.Weight;
-            Habilidades = pokemonDetails.Abilities.Select(a => new Habilidade { Nome = a.Ability.Name }).ToList();
-        }
+       // public void AtualizarPropriedades(PokemonDetailsResults pokemonDetails)
+        //{
+          //  Nome = pokemonDetails.Name;
+           // Altura = pokemonDetails.Height;
+           // Peso = pokemonDetails.Weight;
+           // Habilidades = pokemonDetails.Abilities.Select(a => new Habilidade { Nome = a.Ability.Name }).ToList();
+        //}
+
+        //Agora quem faz essa função e o AutoMapper
         public void Alimentar()
         {
             Alimentacao = Math.Min(Alimentacao + 2, 10);

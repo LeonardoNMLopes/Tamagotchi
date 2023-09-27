@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Model
 {
-    internal class PokemonResult
+    public class PokemonResult
     {
         public string Name { get; set; }
         //para pegar o nome do Pokémon na API
